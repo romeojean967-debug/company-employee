@@ -92,6 +92,95 @@ export type Database = {
         }
         Relationships: []
       }
+      company_applications: {
+        Row: {
+          building: string | null
+          cell: string | null
+          company_id: string | null
+          company_name: string
+          created_at: string
+          description: string | null
+          district: string | null
+          document_kind: string | null
+          document_path: string | null
+          email: string
+          full_name: string
+          id: string
+          office_phone: string | null
+          phone: string | null
+          province: string | null
+          rdb_certificate_number: string | null
+          rdb_registered: boolean
+          review_note: string | null
+          reviewed_at: string | null
+          sector: string | null
+          status: string
+          street: string | null
+          terms_accepted_at: string | null
+          user_id: string | null
+        }
+        Insert: {
+          building?: string | null
+          cell?: string | null
+          company_id?: string | null
+          company_name: string
+          created_at?: string
+          description?: string | null
+          district?: string | null
+          document_kind?: string | null
+          document_path?: string | null
+          email: string
+          full_name: string
+          id?: string
+          office_phone?: string | null
+          phone?: string | null
+          province?: string | null
+          rdb_certificate_number?: string | null
+          rdb_registered?: boolean
+          review_note?: string | null
+          reviewed_at?: string | null
+          sector?: string | null
+          status?: string
+          street?: string | null
+          terms_accepted_at?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          building?: string | null
+          cell?: string | null
+          company_id?: string | null
+          company_name?: string
+          created_at?: string
+          description?: string | null
+          district?: string | null
+          document_kind?: string | null
+          document_path?: string | null
+          email?: string
+          full_name?: string
+          id?: string
+          office_phone?: string | null
+          phone?: string | null
+          province?: string | null
+          rdb_certificate_number?: string | null
+          rdb_registered?: boolean
+          review_note?: string | null
+          reviewed_at?: string | null
+          sector?: string | null
+          status?: string
+          street?: string | null
+          terms_accepted_at?: string | null
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "company_applications_company_id_fkey"
+            columns: ["company_id"]
+            isOneToOne: false
+            referencedRelation: "companies"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       customers: {
         Row: {
           address: string | null
@@ -355,6 +444,7 @@ export type Database = {
           phone: string | null
           position: string | null
           status: string
+          terms_accepted_at: string | null
         }
         Insert: {
           company_id?: string | null
@@ -367,6 +457,7 @@ export type Database = {
           phone?: string | null
           position?: string | null
           status?: string
+          terms_accepted_at?: string | null
         }
         Update: {
           company_id?: string | null
@@ -379,6 +470,7 @@ export type Database = {
           phone?: string | null
           position?: string | null
           status?: string
+          terms_accepted_at?: string | null
         }
         Relationships: [
           {
